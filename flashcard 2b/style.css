@@ -1,5 +1,13 @@
+:root{
+    --texto-principal: #FF69B4;
+    --texto-pergunta:#FF69B4;
+    --texto-resposta:#fdfdfd;
+}
+
 body  {
-    background-color:rgb(250, 142, 241);
+    background: url('fotos-do-lilo-stitch-t6xt2spd12orvfy9.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
     font-family: Bai Jamjuree;
 }
 
@@ -9,7 +17,8 @@ body  {
 
 .cartão {
     margin: 1em 1em;
-    background: rgb(255, 216, 252) ;
+    border: 2px solid var(--texto-principal);
+    border-radius: 0.6rem;
     height: 20em;
     flex-grow: 1;
     flex-basis: calc(33% - 6rem);
@@ -17,11 +26,13 @@ body  {
 
 .cartão__conteudo {
     text-align: center;
-    background-color: rgb(253, 189, 248);
+    border: 2px solid var(--texto-principal);
+    border-radius: 0.6rem;
     height: 100%;
 }
 .cartão__conteudo h3 {
-    background-color: white;
+    color: var(--texto-principal);
+    border: 2px solid var(--texto-principal);
     text-align: left;
     padding: 0.5rem;
     position: absolute;
@@ -29,9 +40,20 @@ body  {
     border-radius: 0.6rem;
     font-size: 1vw;
 }
+.cartão__conteudo__pergunta p{
+    color: var(--texto-pergunta);
+    font-weight: 600;
+    font-size: 20px;
+}
+.cartão__conteudo__resposta p{
+    color: var(--texto-resposta);
+    font-weight: 900;
+    font-size: 20px;
+    padding-top: 1em;
+}
 
 footer {
-    background-color: black;
+   
     color: white;
     position: fixed;
     bottom: 0;
