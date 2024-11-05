@@ -1,11 +1,11 @@
 :root{
-    --texto-principal: #FF69B4;
-    --texto-pergunta:#FF69B4;
+    --texto-principal: #92ceff;
+    --texto-pergunta: #1616d1;
     --texto-resposta:#fdfdfd;
 }
 
 body  {
-    background: url('fotos-do-lilo-stitch-t6xt2spd12orvfy9.jpg');
+    background: url('Fundo-Lilo-e-Stitch-Capa-Redonda-C-rculo-de-Amor-Rosa-Fundo-Da-Fotografia-Banner-Photo.avif');
     background-repeat: no-repeat;
     background-size: 100%;
     font-family: Bai Jamjuree;
@@ -13,6 +13,9 @@ body  {
 
 #container {
     display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
 }
 
 .cartão {
@@ -22,6 +25,7 @@ body  {
     height: 20em;
     flex-grow: 1;
     flex-basis: calc(33% - 6rem);
+    background-color: rgba(101, 186, 255, 0.5);
 }
 
 .cartão__conteudo {
@@ -29,6 +33,8 @@ body  {
     border: 2px solid var(--texto-principal);
     border-radius: 0.6rem;
     height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
 }
 .cartão__conteudo h3 {
     color: var(--texto-principal);
@@ -39,17 +45,35 @@ body  {
     margin: 0.6rem;
     border-radius: 0.6rem;
     font-size: 1vw;
+    backface-visibility: hidden;
 }
 .cartão__conteudo__pergunta p{
     color: var(--texto-pergunta);
     font-weight: 600;
     font-size: 20px;
+    margin-top: 4rem;
 }
 .cartão__conteudo__resposta p{
     color: var(--texto-resposta);
     font-weight: 900;
     font-size: 20px;
     padding-top: 1em;
+}
+
+.cartão:hover .cartão__conteudo{
+    transform: rotateY(180deg);
+} 
+
+.cartão__conteudo__pergunta,
+.cartão__conteudo__resposta{
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cartão__conteudo__resposta{
+    transform: rotateY(180deg);
 }
 
 footer {
